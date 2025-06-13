@@ -25,8 +25,8 @@ db = client["hospital_db"]
 patients_collection = db["patients"]
 doctors_collection = db["doctors"]
 UPLOAD_FOLDER = os.path.join("static", "uploads")
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-
 
 # Home Page
 @app.route("/")
