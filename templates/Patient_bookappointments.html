@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Patient_appointments.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Book an Appointment</h1>
+    <form method="POST" action="{{ url_for('book_appointment') }}">
+      <label>Patient Name:</label>
+      <input type="text" name="patient_name" required />
+
+    <label for="doctor">Select Doctor:</label>
+    <select name="doctor" required>
+      {% for doctor in doctor_usernames %}
+        <option value="{{ doctor }}">{{ doctor }}</option>
+      {% endfor %}
+    </select>
+
+
+
+      <label>Department:</label>
+      <input type="text" name="department" required />
+
+      <label>Date:</label>
+      <input type="date" name="date" required />
+
+      <label>Time:</label>
+      <input type="time" name="time" required />
+
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+</body>
+</html>

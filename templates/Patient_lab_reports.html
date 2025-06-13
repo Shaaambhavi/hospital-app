@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Lab Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Patient_lab_reports.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>My Lab Reports</h1>
+
+    <!-- Verification Upload Form -->
+    <section class="verify-section">
+      <h2>Verify Your Report</h2>
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="verify_file" accept=".png,.jpg,.jpeg" required>
+        <button type="submit"> Verify </button>
+      </form>
+
+      {% if verification_result %}
+        <div class="verify-result">
+          {% if verification_result.is_verified %}
+            <p>✅ <strong>{{ verification_result.filename }}</strong> is <em>Verified</em>!</p>
+          {% else %}
+            <p>❌ <strong>{{ verification_result.filename }}</strong> is <em>Not Verified</em> — Possible Fake.</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </section>
+
+    <hr />
+
+    <!-- Existing Reports Table (without Verified column) -->
+    {% if reports %}
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Report Type</th>
+            <th>Status</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for report in reports %}
+          <tr>
+            <td>{{ report.date }}</td>
+            <td>{{ report.report_type }}</td>
+            <td>{{ report.status or '–' }}</td>
+            <td>
+              {% if report.report_link %}
+                <a href="{{ url_for('static', filename='uploads/' ~ report.report_link) }}" download>
+                  Download
+                </a>
+              {% else %}
+                Not Available
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No reports available.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

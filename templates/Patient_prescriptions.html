@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Prescriptions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Patient_prescriptions.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>My Prescriptions</h1>
+    {% if prescriptions %}
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Medicine</th>
+          <th>Dosage</th>
+          <th>Duration</th>
+          <th>Doctor</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for prescription in prescriptions %}
+        <tr>
+          <td>{{ prescription.date }}</td>
+          <td>{{ prescription.medicine }}</td>
+          <td>{{ prescription.dosage }}</td>
+          <td>{{ prescription.duration }}</td>
+          <td>{{ prescription.doctor }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p>No prescriptions found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

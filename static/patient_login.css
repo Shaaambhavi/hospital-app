@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    background: url('project.avif') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: rgba(226, 195, 230, 0.9);
+    border-top: 5px solid #3d023c;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    padding: 60px 40px;
+    border-radius: 12px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2e002c;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.textbox {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 2px solid #3d023c;
+    background: transparent;
+    color: #1a1a1a;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.textbox input:focus {
+    border-bottom: 2px solid #5c0161;
+}
+
+.loginbtn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: linear-gradient(to right, #b974d6, #e4c1ed);
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.loginbtn:hover {
+    background: linear-gradient(to left, #b974d6, #e4c1ed);
+    transform: scale(1.03);
+}
+
+.signup {
+    margin-top: 30px;
+    text-align: center;
+    color: #3d023c;
+    font-size: 15px;
+}

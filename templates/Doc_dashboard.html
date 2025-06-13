@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Doc_dasboard.css') }}">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Doctor Panel</h2>
+    <a href="{{ url_for('doc_patients') }}">Patients</a>
+    <a href="{{ url_for('doc_reports') }}">Reports</a>
+    <a href="{{ url_for('doc_appointments') }}">Appointments</a>
+    <a href="{{ url_for('doc_messages') }}">Messages</a>
+    <a href="{{ url_for('doc_settings') }}">Settings</a>
+    <a href="{{ url_for('doc_logout') }}">Logout</a>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Welcome, Dr. {{name}}</h1>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        Patients<br><strong>{{ total_patients }} Active</strong>
+      </div>
+      <div class="card">
+        Reports<br><strong>{{ total_reports }} Uploaded</strong>
+      </div>
+      <div class="card">
+        Appointments<br><strong>{{ today_appointments }} Today</strong>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Recent Reports</h2>
+      <ul>
+        {% for report in recent_reports %}
+        <li>{{ report['type'] }} - {{ report['patient'] }} - {{ report['date'] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Upcoming Appointments</h2>
+      <ul>
+        {% for appt in upcoming_appointments %}
+        <li>{{ appt['patient'] }} - {{ appt['time'] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

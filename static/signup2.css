@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background: #f2f2f2;
+  background-image: url(project.avif);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.container {
+  background: rgba(214, 193, 198, 0.87);
+  width: 600px;
+  max-width: 90%;
+  padding: 30px 40px;
+  margin: 0 auto;
+  border-top: 5px solid rgb(61, 2, 60);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.container h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #3d023c;
+}
+
+/* Flash messages */
+ul.flashes {
+  list-style: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  color: #cc0000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+}
+
+.input i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 16px;
+}
+
+.input input,
+.input select {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input input:focus,
+.input select:focus {
+  border-color: #3d023c;
+}
+
+.input label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.input .radio-button {
+  width: auto;
+  margin-left: 10px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.input .checkbutton {
+  width: auto;
+  vertical-align: middle;
+}
+
+.gender-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 36px; /* space for icons on other inputs */
+}
+
+.button {
+  width: 100%;
+  background: rgb(61, 2, 60);
+  font-size: 16px;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.button:hover {
+  background: rgb(91, 10, 90);
+}
+
+.login {
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login a {
+  color: rgb(61, 2, 60);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}

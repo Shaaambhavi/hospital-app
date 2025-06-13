@@ -1,0 +1,76 @@
+/* static/Doc_patients.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(255, 192, 203, 0.2);
+    border: 1px solid #f8d5e0;
+}
+
+h1 {
+    text-align: center;
+    color: #cc4c84;
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #f3c6d4;
+    background-color: #fffafc;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #f0d7e3;
+}
+
+th {
+    background-color: #fcdce6;
+    color: #b23964;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #fff0f5;
+}
+
+td {
+    color: #444;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin: 30px 16px;
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}

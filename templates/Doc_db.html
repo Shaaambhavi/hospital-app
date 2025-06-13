@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Doc_db.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Doctor Panel</h2>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="#">Patients</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Appointments</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome, Dr.</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Patients</h3>
+                <p>24 Active</p>
+            </div>
+            <div class="card">
+                <h3>Reports</h3>
+                <p>58 Uploaded</p>
+            </div>
+            <div class="card">
+                <h3>Appointments</h3>
+                <p>3 Today</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Recent Reports</h2>
+            <ul>
+                <li>Blood Test - Patient A - 25 May 2025</li>
+                <li>X-Ray - Patient B - 24 May 2025</li>
+                <li>ECG - Patient C - 22 May 2025</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Upcoming Appointments</h2>
+            <ul>
+                <li>Patient A - 2:00 PM</li>
+                <li>Patient B - 3:30 PM</li>
+                <li>Patient C - 5:00 PM</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

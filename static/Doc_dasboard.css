@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefafb;
+  color: #222;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #f9dce0; /* Light pastel pink */
+  padding: 24px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+}
+
+/* Sidebar Brand */
+.sidebar h2 {
+  color: #4b1d3f;
+  font-size: 22px;
+  margin-bottom: 28px;
+  font-weight: bold;
+}
+
+/* Sidebar Panel Sections */
+.panel {
+  margin-bottom: 30px;
+}
+
+.panel-title {
+  font-size: 16px;
+  color: #7a2f48;
+  margin-bottom: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #eecfd6;
+  padding-bottom: 4px;
+}
+
+/* Sidebar Links */
+.sidebar a {
+  display: block;
+  color: #4b1d3f;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar a:hover {
+  background-color: #f2b6c2;
+  color: #fff;
+}
+
+/* Main Content */
+.main {
+  margin-left: 260px;
+  padding: 40px;
+}
+
+/* Header */
+.header h1 {
+  color: #a41661;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Dashboard Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #fff3f5;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b1b40;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Sections */
+.section {
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #912f56;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  background-color: #fff3f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: background 0.2s ease;
+}
+
+.section li:hover {
+  background-color: #f7d5de;
+}

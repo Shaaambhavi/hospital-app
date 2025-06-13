@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doctor Account Settings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Patient_settings.css') }}" />
+</head>
+<body>
+  <div class="settings-container">
+    <h1>Account Settings</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('doc_settings') }}">
+      <label>Previous Password</label>
+      <input type="password" name="prev_password" placeholder="Enter current password" required />
+
+      <label>New Password</label>
+      <input type="password" name="new_password" placeholder="Enter new password" required />
+
+      <button type="submit">Update Password</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Reports & Prescriptions Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Doc_reports.css') }}">
+</head>
+<body>
+
+<div class="main-content">
+    <h1>Upload Patient Report and Prescription</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label>Patient Username:</label>
+            <input type="text" name="patient" required>
+        </div>
+
+        <div>
+            <label>Report Type (e.g. Blood Test, X-ray):</label>
+            <input type="text" name="report_type" required>
+        </div>
+
+        <div>
+            <label>Upload Lab Report:</label>
+            <input type="file" name="report_file" required>
+        </div>
+
+        <hr>
+
+        <h2>Prescription Details</h2>
+        <div>
+            <label>Medicine:</label>
+            <input type="text" name="medicine" required>
+        </div>
+
+        <div>
+            <label>Dosage:</label>
+            <input type="text" name="dosage" required>
+        </div>
+
+        <div>
+            <label>Duration:</label>
+            <input type="text" name="duration" required>
+        </div>
+
+        <button type="submit">Submit Report & Prescription</button>
+    </form>
+
+    <hr>
+
+    <h2>Uploaded Records</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Report Type</th>
+                    <th>Date</th>
+                    <th>Report</th>
+                    <th>Medicine</th>
+                    <th>Dosage</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.patient }}</td>
+                    <td>{{ report.report_type }}</td>
+                    <td>{{ report.date }}</td>
+                    <td>
+                        {% if report.report_link %}
+                            <a href="{{ url_for('static', filename='uploads/' + report.report_link) }}" target="_blank">Download Report</a>
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>
+                    <td>{{ report.medicine or 'N/A' }}</td>
+                    <td>{{ report.dosage or 'N/A' }}</td>
+                    <td>{{ report.duration or 'N/A' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Messages</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Patient_messages.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Messages</h1>
+
+    <!-- 📬 Message Sending Form -->
+    <form method="POST" class="send-form">
+      <label for="to_user">Send To (Doctor):</label>
+      <select name="to_user" required>
+        {% for doc in doctors %}
+        <option value="{{ doc }}">{{ doc }}</option>
+        {% endfor %}
+      </select>
+      <textarea name="message" rows="4" placeholder="Type your message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <!-- 📩 Display Messages -->
+    <div class="messages">
+      {% for msg in messages %}
+      <div class="message">
+        <p><strong>From:</strong> {{ msg.from }} → <strong>To:</strong> {{ msg.to }}</p>
+        <p>{{ msg.message }}</p>
+        <p class="timestamp">{{ msg.timestamp }}</p>
+      </div>
+      {% else %}
+      <p>No messages yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

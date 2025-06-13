@@ -1,0 +1,41 @@
+<!-- templates/Doc_patients.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Doc_patients.css') }}">
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Patients List</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Last Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for patient in patients %}
+                    <tr>
+                        <td>{{ patient.name }}</td>
+                        <td>{{ patient.age }}</td>
+                        <td>{{ patient.gender }}</td>
+                        <td>{{ patient.last_visit }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="4">No patients found.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
