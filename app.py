@@ -206,12 +206,12 @@ def patient_prescriptions():
     print("Found prescriptions:", prescriptions)  # debug
 
     return render_template("Patient_prescriptions.html", prescriptions=prescriptions)
-
+    
 def preprocess_image(filepath):
-    img = Image.open(filepath)
-    max_size = (1024, 1024)
+    img = Image.open(filepath).convert("L")  # Grayscale conversion
+    max_size = (800, 800)  # Resize smaller to save memory
     img.thumbnail(max_size, Image.Resampling.LANCZOS)
-    img.save(filepath)
+    img.save(filepath, optimize=True, quality=85)
 
 def has_watermark(filepath, expected_text="Verified by Doctor"):
     try:
