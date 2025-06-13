@@ -11,16 +11,6 @@
   <div class="container">
     <h2>Registration Form</h2>
 
-    <!-- Flash messages -->
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class="flashes">
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
 
     <form method="POST" action="{{ url_for('signup1') }}">
       <div class="input">
