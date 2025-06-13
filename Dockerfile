@@ -1,5 +1,5 @@
 # Use official Python slim image
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Install Tesseract OCR and image dependencies
 RUN apt-get update && apt-get install -y \
